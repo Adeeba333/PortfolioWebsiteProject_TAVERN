@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme{
+  --font-display: 'MedievalSharp', cursive;
+  --font-family: 'MedievalSharp', cursive;
+  --font-sans: 'MedievalSharp', Georgia, cursive;
+  --color-ember:#E76814;
+  --color-parchment:#D8D4BC;
+  --color-blood:#891A10;
+  --color-honey:#DC8236;
+  --color-brick:#B8210F;
+  --color-oak:#714236;
+  --color-ink:#2b1511;
+  --color-cellar:#1f0f0c;
+}
+body{font-synthesis: none;}
+:focus-visible{outline: 3px solid var(--color-ember);outline-offset: 2px;}
+@layer components{
+  .card{
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid var(--color-oak);
+    border-radius: 14px;
+    .dark.card{background: rgba(113, 66, 54, 0.25);}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    padding:.4rem 1rem;
+    font-family:var(--font-display);
+    font-size:.95rem;
+    font-weight:700;
+    background:var(--color-brick);
+    color:ffff;
+    border:2px solid var(--color-ink);
+    border-radius:10px;
+  }
+  .btn:hover{background:var(--color-blood);}
+  .btn:disabled{opacity:0.5;}
+  .btn-alt{background:var(--color-honey);border-color:var(--color-ink);}
+  .btn-alt:hover{background:var(--color-ember);}
+  .feild{
+    width:100%;
+    padding:.5rem .75rem;
+    background:rgba(255, 255, 255, 0.5);
+    border:2px solid var(--color-oak);
+    border-radius:10px;
+  }
+  .dark .feild{background:rgba(0,0,0,.3);
+  color-scheme:dark;}
+  .h1{
+    font-family:var(--font-display);
+    font-size:1.9rem;
+    font-weight:700;
+    color:var(--color-blood);
+  }
+  .h2{
+    font-family:var(--font-display);
+    font-size:1.35rem;
+    font-weight:700;
+    color:var(--color-blood);
+  }
+  .dark .h1,.dark .h2{color:var(--color-honey);}
+}}
